@@ -23,11 +23,13 @@ img.logo {
   list-style: none;
   padding: 0;
   padding-right: 18px;
-  top: 62px;
+  top: 62px;  
 }
 
 .navbar-menuitem {
-  padding: 15px;  
+  padding: 15px;
+  left: 15px;  
+  border-bottom: 1px solid lightslategrey;
 }
 
 .navbar-menuitem a {
