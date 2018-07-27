@@ -1,0 +1,21 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<nav class="navbar">
+  <div class="container">
+    <div class="ui-g">
+      <div class="ui-g-1">
+        <a href="#" class="navbar-toggle" (click)="exibirMenu = !exibirMenu"><i class="material-icons md-24">menu</i></a>
+      </div>
+      <div class="ui-g-11">
+        <img class="logo" src="../../assets/imagens/logo.png"> 
+      </div>  
+    </div>
+  </div>
+  <ul class="navbar-menu" [hidden]="!exibirMenu">
+      <li class="navbar-menuitem"><a href="#">
+        <i class="material-icons md-24">school</i>Alunos</a></li>
+      <li class="navbar-menuitem"><a href="#">
+        <i class="material-icons md-24">people</i>Professores</a></li>
+      <li class="navbar-menuitem"><a href="#">
+        <i class="material-icons md-24">import_contacts</i>Provas</a></li>
+    </ul> 
+</nav>

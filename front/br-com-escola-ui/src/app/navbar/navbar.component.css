@@ -1,0 +1,41 @@
+img.logo {
+  display: block;
+  margin: 0 auto; 
+}
+
+.navbar {
+  background-color: #1e94d2;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.navbar-toggle {
+  color: #fff;
+}
+
+.navbar-menu {
+  background-color: #222;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  z-index: 9998;
+  list-style: none;
+  padding: 0;
+  padding-right: 18px;
+  top: 62px;
+}
+
+.navbar-menuitem {
+  padding: 15px;  
+}
+
+.navbar-menuitem a {
+  padding: 15px; 
+  color: #fff;
+  text-decoration: none; 
+}
+
+.navbar-menuitem a:hover {
+  color:darkgrey;
+ }
