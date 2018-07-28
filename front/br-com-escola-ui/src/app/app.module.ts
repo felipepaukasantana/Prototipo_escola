@@ -6,12 +6,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MenuComponent } from './menu/menu.component';
 
 import { InputTextModule } from 'primeng/inputtext';
+import { AlunoComponent } from './aluno/aluno.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    MenuComponent
+    MenuComponent,
+    AlunoComponent
   ],
   imports: [
     BrowserModule,
