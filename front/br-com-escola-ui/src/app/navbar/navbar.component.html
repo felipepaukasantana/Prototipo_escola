@@ -3,37 +3,41 @@
   <div class="container">
     <div class="ui-g">
       <div class="ui-g-1">
-        <a href="#" class="navbar-toggle" (click)="exibirMenu = !exibirMenu"><i class="material-icons md-24">menu</i></a>
+        <button type="button" class="navbar-toggle" mat-button (click)="drawer.toggle()"><i class="material-icons md-24">menu</i></button>
       </div>
       <div class="ui-g-11">
         <img class="logo" src="../../assets/imagens/logo.png"> 
       </div>  
     </div>
   </div>
-  <ul class="navbar-menu" [hidden]="!exibirMenu">
-      <li class="navbar-menuitem">
-        <a href="#">
-        <i class="material-icons left">
-          school
-        </i>
-        Alunos
-      </a>
-    </li>
-      <li class="navbar-menuitem">
-        <a href="#">
-        <i class="material-icons left">
-          people
-        </i>
-        Professores
-      </a>
-    </li>
-      <li class="navbar-menuitem">
-        <a href="#">
+</nav>
+<mat-drawer id="menu" #drawer class="navbar-menu" mode="side">
+    <ul>
+        <li class="navbar-menuitem">
+          <a href="#">
           <i class="material-icons left">
-            import_contacts
+            school
           </i>
-          Provas
+          Alunos
         </a>
       </li>
-    </ul> 
-</nav>
+        <li class="navbar-menuitem">
+          <a href="#">
+          <i class="material-icons left">
+            people
+          </i>
+          Professores
+        </a>
+      </li>
+        <li class="navbar-menuitem">
+          <a href="#">
+            <i class="material-icons left">
+              import_contacts
+            </i>
+            Provas
+          </a>
+        </li>
+      </ul> 
+  </mat-drawer>
+
+

@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Alunos</h1>
+  <div class="ui-g">
+    <div class="ui-g-12 ui-fluid">
+      <div class="ui-g-12 ui-md-6 ui-lg-2">
+          <Label>Código</Label>
+          <input id="disabled-input" type="text" name="" pInputText [disabled]="true">
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-lg-10">
+        <Label>Nome</Label>
+        <input type="text" name="" pInputText>
+      </div>
+    </div>
+      <!--<div class="ui-g-12 ui-fluid">-->
+        <div class="ui-g-12 ui-lg-4">
+          <Label>Língua Estrangeira</Label>
+          <p-dropdown [options]="linguas" placeholder="Sel. Língua Estrangeira" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>  
+        <div class="ui-g-12 ui-lg-6">
+          <Label>Turma</Label>
+          <p-dropdown [options]="turmas" placeholder="Selecionar Turma" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+      <!--</div>-->
+    </div> 
+</div>
