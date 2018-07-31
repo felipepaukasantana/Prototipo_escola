@@ -1,0 +1,1 @@
+insert into aluno (id, nome) values (1, 'Firida');
