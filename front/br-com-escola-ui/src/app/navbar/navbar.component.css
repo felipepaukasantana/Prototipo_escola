@@ -11,6 +11,13 @@ img.logo {
 
 .navbar-toggle {
   color: #fff;
+  background-color: #1e94d2;
+  border-bottom: none;
+  border: none;
+}
+.navbar-toggle button:hover {
+
+  border: none;
 }
 
 .navbar-menu {
@@ -23,13 +30,14 @@ img.logo {
   list-style: none;
   padding: 0;
   padding-right: 18px;
-  top: 62px;  
+  top: 63px;  
 }
 
 .navbar-menuitem {
   padding: 15px;
   left: 15px;  
   border-bottom: 1px solid lightslategrey;
+  list-style: none;
 }
 
 .navbar-menuitem a {

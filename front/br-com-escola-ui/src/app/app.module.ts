@@ -5,20 +5,30 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MenuComponent } from './menu/menu.component';
 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+
 import { InputTextModule } from 'primeng/inputtext';
-import { AlunoComponent } from './aluno/aluno.component';
+import {DropdownModule} from 'primeng/dropdown';
+import { AlunosComponent } from './alunos/alunos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MenuComponent,
-    AlunoComponent
+    AlunosComponent
   ],
   imports: [
     BrowserModule,
 
-    InputTextModule
+    InputTextModule,
+    DropdownModule,
+
+    MatSidenavModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
