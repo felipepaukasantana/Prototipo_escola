@@ -13,6 +13,10 @@ public class Aluno {
 	private long id;
 	
 	private String nome;
+	
+	private String lingua;
+	
+	private String turma;
 
 	public long getId() {
 		return id;
@@ -28,6 +32,22 @@ public class Aluno {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getLingua() {
+		return lingua;
+	}
+
+	public void setLingua(String lingua) {
+		this.lingua = lingua;
+	}
+
+	public String getTurma() {
+		return turma;
+	}
+
+	public void setTurma(String turma) {
+		this.turma = turma;
 	}
 
 	@Override

@@ -1,1 +1,15 @@
-insert into aluno (id, nome) values (1, 'Firida');
+insert into aluno (id, nome, lingua, turma) values (1, 'João da Silva', 'Espanhol', '1º A');
+insert into aluno (id, nome, lingua, turma) values (2, 'Jorge Souza', 'Espanhol', '1º A');
+insert into aluno (id, nome, lingua, turma) values (3, 'Miguel Santos', 'Inglês', '1º A');
+insert into aluno (id, nome, lingua, turma) values (4, 'Edson Arantes', 'Espanhol', '1º A');
+insert into aluno (id, nome, lingua, turma) values (5, 'Ronaldo Nazario', 'Espanhol', '1º A');
+insert into aluno (id, nome, lingua, turma) values (6, 'Cristiano Ronaldo', 'Espanhol', '1º B');
+insert into aluno (id, nome, lingua, turma) values (7, 'Leonel Messi', 'Espanhol', '1º C');
+insert into aluno (id, nome, lingua, turma) values (8, 'Angel Romero', 'Espanhol', '1º A');
+insert into aluno (id, nome, lingua, turma) values (9, 'Zinedine Zidane', 'Espanhol', '1º B');
+insert into aluno (id, nome, lingua, turma) values (10, 'Roberto Carlos', 'Inglês', '1º A');
+insert into aluno (id, nome, lingua, turma) values (11, 'Adenor Leonardo', 'Espanhol', '1º A');
+insert into aluno (id, nome, lingua, turma) values (12, 'Romário', 'Espanhol', '1º C');
+insert into aluno (id, nome, lingua, turma) values (13, 'Carlos Alberto', 'Espanhol', '1º A');
+insert into aluno (id, nome, lingua, turma) values (14, 'Marta', 'Inglês', '1º A');
+insert into aluno (id, nome, lingua, turma) values (15, 'Renato Augusto', 'Inglês', '1º B');

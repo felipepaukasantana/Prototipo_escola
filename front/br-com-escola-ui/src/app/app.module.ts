@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AlunosComponent } from './alunos/alunos.component';
-import { MenuComponent } from './menu/menu.component';
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 
@@ -21,11 +21,11 @@ import {TableModule} from 'primeng/table';
   declarations: [
     AppComponent,
     NavbarComponent,
-    MenuComponent,
     AlunosComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
 
     InputTextModule,
     DropdownModule,
