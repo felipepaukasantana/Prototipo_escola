@@ -12,6 +12,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import { AlunosComponent } from './alunos/alunos.component';
+import { SerieModule } from './serie/serie.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AlunosComponent } from './alunos/alunos.component';
 
     MatSidenavModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    SerieModule
   ],
   providers: [],
   bootstrap: [AppComponent]
