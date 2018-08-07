@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '../../../node_modules/@angular/forms';
 import { AlunoService } from './aluno.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class AlunosComponent implements OnInit {
   linguas: Array<any>;
   turmas: Array<any>;
   alunos: Array<any>;
-
+  aluno: any;
   constructor(private alunoService: AlunoService) {
     this.linguas = [
       {name: 'Espanhol', code: 'ESP'},
@@ -28,5 +29,10 @@ export class AlunosComponent implements OnInit {
 
   listar() {
     this.alunoService.listar().subscribe(response => this.alunos = response);
+  }
+
+  adicionar(frm: FormGroup) {
+    this.alunoService.adicionar(this.aluno).subscribe(response => {
+    });
   }
 }

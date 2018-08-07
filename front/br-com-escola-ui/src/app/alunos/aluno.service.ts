@@ -13,4 +13,8 @@ export class AlunoService {
   listar(): Observable<any> {
     return this.http.get<any>(`${this.api}/alunos`);
   }
+
+  adicionar(aluno: any): Observable<any> {
+    return this.http.post<any>(`${this.api}/alunos`, aluno);
+  }
 }

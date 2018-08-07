@@ -1,37 +1,61 @@
-<div class="container">
-  <h1>Alunos</h1>
+<div class="ui-g">
+  <div class="ui-g-12">
+    <h1>Alunos</h1>
+  </div>
+</div>
+
+<form autocomplete="off" #frm="ngForm" (ngSubmit)="adicionar(frm)">
   <div class="ui-g">
     <div class="ui-g-12 ui-fluid">
       <div class="ui-g-12 ui-md-6 ui-lg-2">
           <Label>Código</Label>
-          <input id="disabled-input" type="text" name="" pInputText [disabled]="true">
+          <input pInputText type="text" id="codigo" name="codigo" [disabled]="true" #codigo>
       </div>
       <div class="ui-g-12 ui-md-6 ui-lg-10">
         <Label>Nome</Label>
-        <input type="text" name="" pInputText>
+        <input pInputText type="text" id="nome" name="nome" [(ngModel)]="aluno.nome">
       </div>
     </div>
       <div class="ui-g-12 ui-fluid">
         <div class="ui-g-12 ui-lg-4">
           <Label>Língua Estrangeira</Label>
-          <p-dropdown [options]="linguas" placeholder="Sel. Língua Estrangeira" optionLabel="name" [showClear]="true"></p-dropdown>
+          <p-dropdown
+            id="lingua"
+            name="lingua" 
+            [options]="linguas" 
+            placeholder="Sel. Língua Estrangeira" 
+            optionLabel="name" [showClear]="true" 
+            [(ngModel)]="aluno.lingua" 
+            #lingua>
+          </p-dropdown>
         </div>  
         <div class="ui-g-12 ui-lg-2">
           <Label>Turma</Label>
-          <p-dropdown [options]="turmas" placeholder="Selecionar Turma" optionLabel="name" [showClear]="true"></p-dropdown>
+          <p-dropdown
+            id="turma"
+            name="turma" 
+            [options]="turmas" 
+            placeholder="Selecionar Turma" 
+            optionLabel="name" 
+            [showClear]="true" 
+            [(ngModel)]="aluno.turma" 
+            #turma>
+          </p-dropdown>
         </div>
       </div>
   </div>
   <div class="ui-g">
       <p-toolbar class="ui-g-12">
         <div class="ui-toolbar-group-left">
-          <button pButton type="button" label="Novo" icon="pi pi-plus"></button>
+          <button pButton  label="Novo" icon="pi pi-plus"></button>
           <button pButton type="button" label="Salvar" [disabled]="true" icon="pi pi-upload" class="ui-button-success" style="left: 2px;"></button>
           <i class="pi pi-bars"></i>
           <button pButton type="button" label="Pesquisar" icon="pi pi-search"></button>
         </div>
     </p-toolbar> 
   </div>
+</form>
+
   <div class="ui-g">
     <div class="ui-g-12">
         <p-table [value]="alunos" [paginator]="true" [rows]="10" [responsive]="true">
@@ -59,5 +83,5 @@
         </p-table>  
     </div>  
   </div>
-</div>
+
 
