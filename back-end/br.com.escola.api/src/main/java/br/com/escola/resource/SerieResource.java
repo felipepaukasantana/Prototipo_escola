@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -21,13 +22,14 @@ import br.com.escola.model.Serie;
 import br.com.escola.service.SerieService;
 
 @CrossOrigin("*")
+@RequestMapping("/series")
 @RestController
 public class SerieResource {
 
 	@Autowired
 	private SerieService serieService;
 
-	@GetMapping(value = "/series/")
+	@GetMapping()
 	public ResponseEntity<List<Serie>> listarTodos() {
 		List<Serie> series = serieService.listarTodos();
 		if (series.isEmpty())
@@ -36,7 +38,7 @@ public class SerieResource {
 		return new ResponseEntity<List<Serie>>(series, HttpStatus.OK);
 	}
 
-	@GetMapping(value = "/series/{id}")
+	@GetMapping(value = "/{id}")
 	public ResponseEntity<Serie> buscarPorId(@PathVariable("id") long id) {
 		Optional<Serie> serie = serieService.buscarPorId(id);
 		if (serie == null)
@@ -45,7 +47,7 @@ public class SerieResource {
 		return new ResponseEntity<Serie>(serie.get(), HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/series/")
+	@PostMapping()
 	public ResponseEntity<Void> adicionar(@RequestBody Serie serie, UriComponentsBuilder ucBuilder) {
 		serieService.adicionarOuAlterar(serie);
 
@@ -54,7 +56,7 @@ public class SerieResource {
 		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 
-	@PutMapping(value = "/series/{id}")
+	@PutMapping(value = "/{id}")
 	public ResponseEntity<Serie> updateUser(@PathVariable("id") long id, @RequestBody Serie serie) {
 		Serie serieCorrente = serieService.buscarPorId(id).get();
 		if (serieCorrente == null)
@@ -66,7 +68,7 @@ public class SerieResource {
 		return new ResponseEntity<Serie>(serieCorrente, HttpStatus.OK);
 	}
 
-	@DeleteMapping(value = "/series/{id}")
+	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Serie> removerPorId(@PathVariable("id") long id) {
 		if (!serieService.verificarPorId(id))
 			return new ResponseEntity<Serie>(HttpStatus.NOT_FOUND);
@@ -75,7 +77,7 @@ public class SerieResource {
 		return new ResponseEntity<Serie>(HttpStatus.NO_CONTENT);
 	}
 
-	@DeleteMapping(value = "/series/")
+	@DeleteMapping()
 	public ResponseEntity<Serie> removerTodos() {
 		serieService.removerTodos();
 		return new ResponseEntity<Serie>(HttpStatus.NO_CONTENT);
