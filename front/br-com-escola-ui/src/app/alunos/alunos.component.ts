@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '../../../node_modules/@angular/forms';
 import { AlunoService } from './aluno.service';
 
+import { MessageService } from 'primeng/components/common/messageservice';
+
 @Component({
   selector: 'app-alunos',
   templateUrl: './alunos.component.html',
@@ -12,19 +14,24 @@ export class AlunosComponent implements OnInit {
   turmas: Array<any>;
   alunos: Array<any>;
   aluno: any;
-  constructor(private alunoService: AlunoService) {
-    this.linguas = [
-      {name: 'Espanhol', code: 'ESP'},
-      {name: 'Inglês', code: 'ING'}
-    ];
-    this.turmas = [
-      {name: '1º A'},
-      {name: '1º B'}
-    ];
+  constructor(private alunoService: AlunoService,
+    private messageService: MessageService) {
+
   }
 
   ngOnInit() {
     this.listar();
+    this.listarLinguas();
+    this.listarTurmas();
+    this.aluno = {codigo: 0, nome: '', lingua: 0, turma: 0};
+  }
+
+  listarLinguas() {
+    this.alunoService.listarLinguas().subscribe(response => this.linguas = response);
+  }
+
+  listarTurmas() {
+    this.alunoService.listarTurmas().subscribe(response => this.turmas = response);
   }
 
   listar() {
@@ -33,6 +40,8 @@ export class AlunosComponent implements OnInit {
 
   adicionar(frm: FormGroup) {
     this.alunoService.adicionar(this.aluno).subscribe(response => {
+      this.messageService.add({severity: 'success', summary: 'Service Message', detail: 'Via MessageService'});
+      this.listar();
     });
   }
 }

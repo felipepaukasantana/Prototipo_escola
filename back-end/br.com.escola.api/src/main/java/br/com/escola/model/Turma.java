@@ -7,26 +7,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Aluno {
+@Table(name="TURMA")
+public class Turma {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	private String nome;	
+	private String descricao;
 	
 	@NotNull
-	@JoinColumn(name="LINGUA_ESTRANGEIRA")
+	@JoinColumn(name="SERIE")
 	@ManyToOne(cascade = CascadeType.ALL)
-	private LinguaEstrangeira lingua;
-		
-	@NotNull
-	@JoinColumn(name="TURMA")
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Turma turma;
+	private Serie serie;
 
 	public long getId() {
 		return id;
@@ -36,28 +33,20 @@ public class Aluno {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public LinguaEstrangeira getLingua() {
-		return lingua;
+	public Serie getSerie() {
+		return serie;
 	}
 
-	public void setLingua(LinguaEstrangeira lingua) {
-		this.lingua = lingua;
-	}
-
-	public Turma getTurma() {
-		return turma;
-	}
-
-	public void setTurma(Turma turma) {
-		this.turma = turma;
+	public void setSerie(Serie serie) {
+		this.serie = serie;
 	}
 
 	@Override
@@ -76,10 +65,9 @@ public class Aluno {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Aluno other = (Aluno) obj;
+		Turma other = (Turma) obj;
 		if (id != other.id)
 			return false;
 		return true;
 	}
-	
 }

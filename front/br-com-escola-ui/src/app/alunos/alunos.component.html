@@ -13,7 +13,7 @@
       </div>
       <div class="ui-g-12 ui-md-6 ui-lg-10">
         <Label>Nome</Label>
-        <input pInputText type="text" id="nome" name="nome" [(ngModel)]="aluno.nome">
+        <input pInputText type="text" id="nome" name="nome" [(ngModel)]="aluno.nome" #nome>
       </div>
     </div>
       <div class="ui-g-12 ui-fluid">
@@ -24,7 +24,7 @@
             name="lingua" 
             [options]="linguas" 
             placeholder="Sel. Língua Estrangeira" 
-            optionLabel="name" [showClear]="true" 
+            optionLabel="nome" [showClear]="true" 
             [(ngModel)]="aluno.lingua" 
             #lingua>
           </p-dropdown>
@@ -36,7 +36,7 @@
             name="turma" 
             [options]="turmas" 
             placeholder="Selecionar Turma" 
-            optionLabel="name" 
+            optionLabel="descricao" 
             [showClear]="true" 
             [(ngModel)]="aluno.turma" 
             #turma>
@@ -72,8 +72,8 @@
                 <tr>
                     <td class="col-short">{{aluno.id}}</td>
                     <td>{{aluno.nome}}</td>
-                    <td class="col-medium">{{aluno.lingua}}</td>
-                    <td class="col-short">{{aluno.turma}}</td>
+                    <td class="col-medium">{{aluno.lingua.nome}}</td>
+                    <td class="col-short">{{aluno.turma.descricao}}</td>
                     <td class="grid-button">
                         <button pButton type="button" icon="pi pi-pencil"></button>                        
                         <button pButton type="button" icon="pi pi-trash" class="ui-button-danger grid-button-al"></button>  
