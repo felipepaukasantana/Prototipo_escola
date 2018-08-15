@@ -25,4 +25,13 @@ export class AlunoService {
   listarTurmas(): Observable<any> {
     return this.http.get<any>(`${this.api}/turmas`);
   }
+
+  listarByCodigo(codigo: number): any {
+    return this.http.get(`${this.api}/alunos/${codigo}`);
+  }
+
+  atualizar(aluno: any): Observable<any> {
+    const codigo = aluno.id;
+    return this.http.put(`${this.api}/alunos/${codigo}`, JSON.stringify(aluno));
+  }
 }

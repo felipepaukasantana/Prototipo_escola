@@ -44,4 +44,12 @@ export class AlunosComponent implements OnInit {
       this.listar();
     });
   }
+
+  selecionarAluno(codigo: number) {
+    this.alunoService.listarByCodigo(codigo).subscribe(response => this.aluno = response);
+  }
+
+  atualizar() {
+    this.alunoService.atualizar(this.aluno).subscribe(response => this.aluno = response);
+  }
 }

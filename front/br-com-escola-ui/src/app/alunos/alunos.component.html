@@ -9,7 +9,7 @@
     <div class="ui-g-12 ui-fluid">
       <div class="ui-g-12 ui-md-6 ui-lg-2">
           <Label>Código</Label>
-          <input pInputText type="text" id="codigo" name="codigo" [disabled]="true" #codigo>
+          <input pInputText type="text" id="codigo" name="codigo" [disabled]="true" [(ngModel)]="aluno.id" #codigo>
       </div>
       <div class="ui-g-12 ui-md-6 ui-lg-10">
         <Label>Nome</Label>
@@ -47,8 +47,8 @@
   <div class="ui-g">
       <p-toolbar class="ui-g-12">
         <div class="ui-toolbar-group-left">
-          <button pButton  label="Novo" icon="pi pi-plus"></button>
-          <button pButton type="button" label="Salvar" [disabled]="true" icon="pi pi-upload" class="ui-button-success" style="left: 2px;"></button>
+          <button pButton label="Novo" icon="pi pi-plus"></button>
+          <button pButton type="button" label="Salvar" (click)="atualizar()" icon="pi pi-upload" class="ui-button-success" style="left: 2px;"></button>
           <i class="pi pi-bars"></i>
           <button pButton type="button" label="Pesquisar" icon="pi pi-search"></button>
         </div>
@@ -75,7 +75,7 @@
                     <td class="col-medium">{{aluno.lingua.nome}}</td>
                     <td class="col-short">{{aluno.turma.descricao}}</td>
                     <td class="grid-button">
-                        <button pButton type="button" icon="pi pi-pencil"></button>                        
+                        <button pButton type="button" icon="pi pi-pencil" (click)="selecionarAluno(aluno.id)"></button>                        
                         <button pButton type="button" icon="pi pi-trash" class="ui-button-danger grid-button-al"></button>  
                     </td>
                 </tr>
