@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
@@ -17,6 +17,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {ToolbarModule} from 'primeng/toolbar';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {TableModule} from 'primeng/table';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {TableModule} from 'primeng/table';
     BrowserAnimationsModule,
     NoopAnimationsModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt' },
+  MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

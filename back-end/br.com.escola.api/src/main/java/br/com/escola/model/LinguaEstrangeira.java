@@ -1,32 +1,20 @@
 package br.com.escola.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Table;
 
 @Entity
-public class Aluno {
+@Table(name="LINGUA_ESTRANGEIRA")
+public class LinguaEstrangeira {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	private String nome;	
-	
-	@NotNull
-	@JoinColumn(name="LINGUA_ESTRANGEIRA")
-	@ManyToOne(cascade = CascadeType.ALL)
-	private LinguaEstrangeira lingua;
-		
-	@NotNull
-	@JoinColumn(name="TURMA")
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Turma turma;
+	private String nome;
 
 	public long getId() {
 		return id;
@@ -42,22 +30,6 @@ public class Aluno {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public LinguaEstrangeira getLingua() {
-		return lingua;
-	}
-
-	public void setLingua(LinguaEstrangeira lingua) {
-		this.lingua = lingua;
-	}
-
-	public Turma getTurma() {
-		return turma;
-	}
-
-	public void setTurma(Turma turma) {
-		this.turma = turma;
 	}
 
 	@Override
@@ -76,10 +48,9 @@ public class Aluno {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Aluno other = (Aluno) obj;
+		LinguaEstrangeira other = (LinguaEstrangeira) obj;
 		if (id != other.id)
 			return false;
 		return true;
 	}
-	
 }
